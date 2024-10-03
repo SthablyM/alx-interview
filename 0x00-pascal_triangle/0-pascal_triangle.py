@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """function that representing the Pascal’s triangle of n"""
 def pascal_triangle(n):
     """function that return a list of lists"""
