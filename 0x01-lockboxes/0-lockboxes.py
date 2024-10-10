@@ -3,8 +3,12 @@
 method that determines if all the boxes can be opened
 """
 
+
 def canUnlockAll(boxes):
-    """track of which boxes have been opened (visited)"""
+    """
+    Determines if all boxes can be unlocked
+    :return: True if all boxes can be opened, else False
+    """
     ob = [False] * len(boxes)
     ob[0] = True
     stack = [0]
