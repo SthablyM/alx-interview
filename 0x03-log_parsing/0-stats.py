@@ -17,6 +17,7 @@ status_code_counts = {
 }
 line_count = 0
 
+
 def print_stats():
     """Prints the total file size and status code statistics."""
     print(f"File size: {total_file_size}")
@@ -24,10 +25,14 @@ def print_stats():
         if status_code_counts[code] > 0:
             print(f"{code}: {status_code_counts[code]}")
 
+
 def signal_handler(sig, frame):
-    """Handle keyboard interruption (Ctrl + C) gracefully by printing the stats."""
+    """
+    Handle keyboard interruption (Ctrl + C) gracefully by printing the stats.
+    """
     print_stats()
     sys.exit(0)
+
 
 signal.signal(signal.SIGINT, signal_handler)
 
@@ -36,7 +41,6 @@ try:
         parts = line.split()
         if len(parts) < 7:
             continue
-        
         try:
             ip_address = parts[0]
             date = parts[3][1:]
