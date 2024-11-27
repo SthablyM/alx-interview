@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Change comes from within
-"""
-
+"""Making change"""
 
 def makeChange(coins, total):
     """
@@ -10,10 +7,15 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
-    dp = [float('inf')] * (total + 1)
-    dp[0] = 0
+    dp = 0
+    tmp = 0
+    coins.sort(reverse=True)
     for coin in coins:
-        for amount in range(coin, total + 1):
-            dp[amount] = min(dp[amount], dp[amount - coin] + 1)
-
-    return dp[total] if dp[total] != float('inf') else -1
+        while dp < total:
+            dp += coin
+            tmp += 1
+        if dp == total:
+            return tmp
+        dp -= coin
+        tmp -= 1
+    return -1
