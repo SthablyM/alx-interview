@@ -1,4 +1,3 @@
-alexa@ubuntu:~/0x03-log_parsing$ cat 0-generator.py
 #!/usr/bin/python3
 import random
 import sys
